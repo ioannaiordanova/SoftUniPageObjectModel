@@ -23,10 +23,12 @@ namespace AutomationPractice.Pages.SortablePage
         {
             if (IndexExists(i))
             {
-                return GridItems[i - 1];
+                return GridItems[i-1];
             }
             else return null;
         }
+
+       
 
         public IWebElement GetListElementByIndex(int i){
             if (IndexExists(i))

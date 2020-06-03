@@ -28,19 +28,15 @@ namespace AutomationPractice.Tests
         {
            
            _sortablePage.GridTab.Click();
-            IWebElement SortableItemSource = _sortablePage.GetGridElementByIndex(1);
-            IWebElement SortableItemTarget = _sortablePage.GetGridElementByIndex(9); 
-        
-            string text9 = SortableItemTarget.Text;
-            string TextOne = SortableItemSource.Text;
+            
+            string TextOne = _sortablePage.GetGridElementByIndex(1).Text;
 
-         Builder
-              .DragAndDropToOffset(SortableItemSource, 2 * SortableItemTarget.Size.Width, 2 * SortableItemTarget.Size.Height)
-              .Release(SortableItemSource)
-              .Perform();
+             Builder
+                  .DragAndDropToOffset(_sortablePage.GetGridElementByIndex(1), 2 * _sortablePage.GetGridElementByIndex(1).Size.Width, 2 * _sortablePage.GetGridElementByIndex(1).Size.Height)
+                  .Release(_sortablePage.GetGridElementByIndex(1))
+                  .Perform();
 
-            Assert.AreEqual(TextOne, SortableItemTarget.Text);
-           
+            Assert.AreEqual(TextOne, _sortablePage.GetGridElementByIndex(9).Text);         
         }
 
 
