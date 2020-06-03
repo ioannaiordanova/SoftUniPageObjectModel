@@ -5,6 +5,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\DraggablePage\**" />
+    <Compile Remove="Pages\DroppablePage\**" />
+    <Compile Remove="Pages\ResizablePage\**" />
+    <Compile Remove="Pages\SelectablePage\**" />
+    <Compile Remove="Pages\SideBar\**" />
+    <Compile Remove="Pages\SortablePage\**" />
+    <EmbeddedResource Remove="Pages\DraggablePage\**" />
+    <EmbeddedResource Remove="Pages\DroppablePage\**" />
+    <EmbeddedResource Remove="Pages\ResizablePage\**" />
+    <EmbeddedResource Remove="Pages\SelectablePage\**" />
+    <EmbeddedResource Remove="Pages\SideBar\**" />
+    <EmbeddedResource Remove="Pages\SortablePage\**" />
+    <None Remove="Pages\DraggablePage\**" />
+    <None Remove="Pages\DroppablePage\**" />
+    <None Remove="Pages\ResizablePage\**" />
+    <None Remove="Pages\SelectablePage\**" />
+    <None Remove="Pages\SideBar\**" />
+    <None Remove="Pages\SortablePage\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\BasePageDemoQA.Elements.cs" />
+    <Compile Remove="Pages\BasePageDemoQA.Methods.cs" />
+    <Compile Remove="Tests\DraggableTests.cs" />
+    <Compile Remove="Tests\DroppableTests.cs" />
+    <Compile Remove="Tests\Navigation.cs" />
+    <Compile Remove="Tests\ResizableTests.cs" />
+    <Compile Remove="Tests\SelectableTests.cs" />
+    <Compile Remove="Tests\SortableTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.11.0" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />

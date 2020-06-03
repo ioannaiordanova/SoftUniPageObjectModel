@@ -50,7 +50,9 @@ namespace AutomationPractice.Tests.Froms
         {
             _registrationFormPage.WaitForLoad();
             _user.SkipFirstName();
+
             _registrationFormPage.FillRegistrationInfo(_user);
+            
             _registrationFormPage.AlaertContainsMessage(_user.ErrorMessage);
         }
 
@@ -59,7 +61,9 @@ namespace AutomationPractice.Tests.Froms
         {
             _registrationFormPage.WaitForLoad();
             _user.SkipLastName();
+           
             _registrationFormPage.FillRegistrationInfo(_user);
+            
             _registrationFormPage.AlaertContainsMessage(_user.ErrorMessage);
         }
 
@@ -68,7 +72,9 @@ namespace AutomationPractice.Tests.Froms
         {
             _registrationFormPage.WaitForLoad();
             _user.SkipLastEmail();
+            
             _registrationFormPage.FillRegistrationInfo(_user);
+            
             _registrationFormPage.AlaertContainsMessage(_user.ErrorMessage);
         }
 
@@ -78,7 +84,9 @@ namespace AutomationPractice.Tests.Froms
         {
             _registrationFormPage.WaitForLoad();
             _user.SetInvalidEmail();
+           
             _registrationFormPage.FillRegistrationInfo(_user);
+            
             _registrationFormPage.AlaertContainsMessage(_user.ErrorMessage);
         }
 
@@ -88,7 +96,9 @@ namespace AutomationPractice.Tests.Froms
         {
             _registrationFormPage.WaitForLoad();
             _user.SkipPassword();
+            
             _registrationFormPage.FillRegistrationInfo(_user);
+            
             _registrationFormPage.AlaertContainsMessage(_user.ErrorMessage);
         }
 
@@ -97,7 +107,9 @@ namespace AutomationPractice.Tests.Froms
         {
             _registrationFormPage.WaitForLoad();
             _user.SetInvalidPassword();
+            
             _registrationFormPage.FillRegistrationInfo(_user);
+            
             _registrationFormPage.AlaertContainsMessage(_user.ErrorMessage);
         }
 
@@ -107,7 +119,9 @@ namespace AutomationPractice.Tests.Froms
         {
             _registrationFormPage.WaitForLoad();
             _user.SkipCity();
+           
             _registrationFormPage.FillRegistrationInfo(_user);
+            
             _registrationFormPage.AlaertContainsMessage(_user.ErrorMessage);
         }
 
@@ -116,7 +130,9 @@ namespace AutomationPractice.Tests.Froms
         {
             _registrationFormPage.WaitForLoad();
             _user.SkipPostCode();
+           
             _registrationFormPage.FillRegistrationInfo(_user);
+            
             _registrationFormPage.AlaertContainsMessage(_user.ErrorMessage);
         }
 
@@ -125,7 +141,9 @@ namespace AutomationPractice.Tests.Froms
         {
             _registrationFormPage.WaitForLoad();
             _user.SkipMobile();
+            
             _registrationFormPage.FillRegistrationInfo(_user);
+            
             _registrationFormPage.AlaertContainsMessage(_user.ErrorMessage);
         }
 
