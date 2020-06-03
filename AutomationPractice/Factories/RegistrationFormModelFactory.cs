@@ -9,12 +9,12 @@ namespace AutomationPractice.Factories
             {
                 FirstName = "FirstName",
                 LastName = "LastName",
-                Email = "Email",
+                Email = "Email@abv.bg",
                 Password = "Password",
                 Address1 = "Address1",
                 City = "City",
                 State = "Alabama",
-                PostCode = "PostCode",
+                PostCode = "11111",
                 Country = "United States",
                 Mobile = "Mobile"
 
