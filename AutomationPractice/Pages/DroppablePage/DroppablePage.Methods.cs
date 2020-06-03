@@ -1,12 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationPractice.Pages.SideBar;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace AutomationPractice.Pages.Droppable
 {
-   public partial class DroppablePage: BasePageDemoQA
+   public partial class DroppablePage: SideBarMenu
     {
 
         public DroppablePage(IWebDriver driver, Actions builder) : base(driver, builder){ }
@@ -44,6 +43,12 @@ namespace AutomationPractice.Pages.Droppable
         public string GetDroppableText()
         {
             return Droppable.Text;
+        }
+
+        public override void ClickOnSideBarMenuItem()
+        {
+            base.ClickOnSideBarMenuItem(SideBarEnum.Droppable.GetStringValue());
+
         }
     }
 }

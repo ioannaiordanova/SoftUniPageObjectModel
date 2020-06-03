@@ -12,8 +12,12 @@ namespace AutomationPractice.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            Driver.Navigate().GoToUrl("http://demoqa.com/sortable");
+            Driver.Navigate().GoToUrl("http://demoqa.com/");
             _sortablePage = new SortablePage(Driver, Builder);
+            _sortablePage.WaitForLoad();
+            _sortablePage.SelectFromMainMenu("Interactions");
+            _sortablePage.WaitForLoad();
+            _sortablePage.ClickOnSideBarMenuItem();
         }
 
         [TearDown]
@@ -45,9 +49,9 @@ namespace AutomationPractice.Tests
         public void MoveTheFirstDown_CheckTheFirst_Test()
         {
          
-            string Text_InThe_Second = _sortablePage.GetListItemText(2);
+            string TextInTheSecond = _sortablePage.GetListItemText(2);
             _sortablePage.MoveListElementOneBelow(1);
-            Assert.AreEqual(Text_InThe_Second, _sortablePage.GetListItemText(1));
+            Assert.AreEqual(TextInTheSecond, _sortablePage.GetListItemText(1));
 
         }
 

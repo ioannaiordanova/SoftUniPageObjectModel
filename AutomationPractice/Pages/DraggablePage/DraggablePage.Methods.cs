@@ -1,12 +1,12 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationPractice.Pages.SideBar;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Internal;
-using OpenQA.Selenium.Support.UI;
+
 
 
 namespace AutomationPractice.Pages.DraggablePage
 {
-    public partial class DraggablePage
+    public partial class DraggablePage:SideBarMenu
     {
         public DraggablePage(IWebDriver driver, Actions builder) : base(driver,builder) { 
            
@@ -39,6 +39,12 @@ namespace AutomationPractice.Pages.DraggablePage
             Builder
                    .DragAndDrop(DragBox, element)
                    .Perform();
+        }
+
+        public override void ClickOnSideBarMenuItem()
+        {
+            base.ClickOnSideBarMenuItem(SideBarEnum.Draggable.GetStringValue());
+
         }
 
     }

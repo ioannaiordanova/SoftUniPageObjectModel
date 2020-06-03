@@ -1,19 +1,18 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationPractice.Pages.SideBar;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace AutomationPractice.Pages.ResizablePage
 {
-    public partial class ResizablePage: BasePageDemoQA
+    public partial class ResizablePage : SideBarMenu
     {
         public ResizablePage(IWebDriver driver, Actions builder) : base(driver, builder)
-        { 
+        {
         }
 
-        public double ConstraintAreaWidth() { 
-            return ConstraintArea.Size.Width; 
+        public double ConstraintAreaWidth() {
+            return ConstraintArea.Size.Width;
         }
 
         public double ConstraintAreaHeight()
@@ -23,7 +22,7 @@ namespace AutomationPractice.Pages.ResizablePage
 
         public double GetResizableBoxWidth() {
             return ResizableBox.Size.Width;
-         }
+        }
 
         public double GetResizableBoxHeight()
         {
@@ -36,6 +35,12 @@ namespace AutomationPractice.Pages.ResizablePage
                     .MoveByOffset(1, 1)
                     .ClickAndHold(ResizableBoxHandle)
                     .MoveByOffset(X, Y);
+        }
+
+        public override void ClickOnSideBarMenuItem()
+        {
+            base.ClickOnSideBarMenuItem(SideBarEnum.Resizable.GetStringValue());
+
         }
     }
 }

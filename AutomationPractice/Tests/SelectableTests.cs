@@ -12,8 +12,12 @@ namespace AutomationPractice.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            Driver.Navigate().GoToUrl("http://demoqa.com/selectable");
+            Driver.Navigate().GoToUrl("http://demoqa.com/");
             _selectablePage = new SelectablePage(Driver);
+            _selectablePage.WaitForLoad();
+            _selectablePage.SelectFromMainMenu("Interactions");
+            _selectablePage.WaitForLoad();
+            _selectablePage.ClickOnSideBarMenuItem();
         }
 
         [TearDown]

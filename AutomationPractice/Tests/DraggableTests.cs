@@ -13,8 +13,12 @@ namespace AutomationPractice.Tests
         public void Setup()
         {
             Initialize();
-            Driver.Navigate().GoToUrl("http://demoqa.com/dragabble");
+            Driver.Navigate().GoToUrl("http://demoqa.com/");
             _draggablePage = new DraggablePage(Driver, Builder);
+            _draggablePage.WaitForLoad();
+            _draggablePage.SelectFromMainMenu("Interactions");
+            _draggablePage.WaitForLoad();
+            _draggablePage.ClickOnSideBarMenuItem();
 
         }
 

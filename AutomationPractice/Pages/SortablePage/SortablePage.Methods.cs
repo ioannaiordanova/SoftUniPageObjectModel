@@ -1,12 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationPractice.Pages.SideBar;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace AutomationPractice.Pages.SortablePage
 {
-    public partial class SortablePage : BasePageDemoQA
+    public partial class SortablePage : SideBarMenu
     {
         public SortablePage(IWebDriver driver, Actions builder) : base(driver, builder) {
 
@@ -52,6 +51,12 @@ namespace AutomationPractice.Pages.SortablePage
                .DragAndDropToOffset(GetListElementByIndex(i), 0, GetListElementHeight(i) + 10)
                .Release(GetListElementByIndex(i))
                .Perform();
+        }
+
+        public override void ClickOnSideBarMenuItem()
+        {
+            base.ClickOnSideBarMenuItem(SideBarEnum.Sortable.GetStringValue());
+
         }
     }
 }

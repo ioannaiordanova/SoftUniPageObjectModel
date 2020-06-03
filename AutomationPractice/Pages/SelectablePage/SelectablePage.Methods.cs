@@ -1,12 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationPractice.Pages.SideBar;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace AutomationPractice.Pages.Selectable
 {
-    public partial class SelectablePage : BasePage
+    public partial class SelectablePage : SideBarMenu
     {
         public SelectablePage(IWebDriver driver) : base(driver)
         { 
@@ -29,6 +28,12 @@ namespace AutomationPractice.Pages.Selectable
             if (SelectableIndexExists(index))
                 return ListOfSelectables[index-1].GetCssValue("background");
             else return null;
+        }
+
+        public override void ClickOnSideBarMenuItem()
+        {
+            base.ClickOnSideBarMenuItem(SideBarEnum.Selectable.GetStringValue());
+
         }
     }
 }

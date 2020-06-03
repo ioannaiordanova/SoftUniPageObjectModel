@@ -9,8 +9,9 @@ namespace AutomationPractice.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            Driver.Navigate().GoToUrl("http://demoqa.com/droppable");
+            Driver.Navigate().GoToUrl("http://demoqa.com/");
             _droppablePage = new DroppablePage(Driver, Builder);
+            _droppablePage.NavigateToPage();
 
         }
 

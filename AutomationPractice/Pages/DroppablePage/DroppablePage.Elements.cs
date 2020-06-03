@@ -1,11 +1,10 @@
-﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AutomationPractice.Pages.SideBar;
+using OpenQA.Selenium;
+
 
 namespace AutomationPractice.Pages.Droppable
 {
-   public partial class DroppablePage : BasePageDemoQA
+   public partial class DroppablePage : SideBarMenu
     {
         public IWebElement Draggable => Driver.FindElement(By.Id("draggable"));
 

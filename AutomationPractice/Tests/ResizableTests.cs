@@ -1,4 +1,5 @@
 ﻿using AutomationPractice.Pages.ResizablePage;
+using AutomationPractice.Pages.SideBar;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,12 @@ namespace AutomationPractice.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            Driver.Navigate().GoToUrl("http://demoqa.com/resizable");
+            Driver.Navigate().GoToUrl("http://demoqa.com/");
             _resizablePage = new ResizablePage(Driver,Builder);
+            _resizablePage.WaitForLoad();
+            _resizablePage.SelectFromMainMenu("Interactions");
+            _resizablePage.WaitForLoad();
+            _resizablePage.ClickOnSideBarMenuItem();
         }
 
         [TearDown]

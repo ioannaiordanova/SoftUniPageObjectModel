@@ -1,11 +1,11 @@
-﻿using OpenQA.Selenium;
-using System;
+﻿using AutomationPractice.Pages.SideBar;
+using OpenQA.Selenium;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace AutomationPractice.Pages.SortablePage
 {
-   public partial class SortablePage : BasePageDemoQA
+   public partial class SortablePage : SideBarMenu
     {
         IList<IWebElement> ListItems => Driver.FindElements(By.CssSelector(".list-group-item.list-group-item-action"));
         public IWebElement GridTab => Driver.FindElement(By.Id("demo-tab-grid"));

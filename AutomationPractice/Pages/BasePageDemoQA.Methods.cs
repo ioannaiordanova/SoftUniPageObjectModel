@@ -9,7 +9,7 @@ namespace AutomationPractice.Pages
     public partial class BasePageDemoQA: BasePage
     {
         public Actions Builder { get; }
-        public BasePageDemoQA(IWebDriver driver, Actions builder) :base(driver) {
+        public BasePageDemoQA(IWebDriver driver, Actions builder=null) :base(driver) {
             Builder = builder;
         }
 
@@ -19,6 +19,11 @@ namespace AutomationPractice.Pages
 
         public int getLogoHeight() {
             return Logo.Size.Height;
+        }
+
+        public void SelectFromMainMenu(string sectionName)
+        {
+            Driver.FindElement(By.XPath($"//div[@class='card mt-4 top-card']//h5[text()='{sectionName}']/ancestor::div[@class='card mt-4 top-card']")).Click();
         }
     }
 }
