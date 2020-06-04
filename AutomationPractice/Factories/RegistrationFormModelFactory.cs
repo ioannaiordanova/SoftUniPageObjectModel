@@ -16,7 +16,7 @@ namespace AutomationPractice.Factories
                 State = "Alabama",
                 PostCode = "11111",
                 Country = "United States",
-                Mobile = "Mobile"
+                Mobile = "11 22 33"
 
             };
         }

@@ -44,7 +44,7 @@ namespace AutomationPractice.Pages.RegistrationForm
         }
 
         [Obsolete]
-        public virtual new void WaitForLoad(int timeoutSec=5) {
+        public virtual new void WaitForLoad(int timeoutSec=15) {
             WebDriverWait _wait = new WebDriverWait(Driver, new TimeSpan(0, 0, timeoutSec));
             _wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.required > input#email")));
         }

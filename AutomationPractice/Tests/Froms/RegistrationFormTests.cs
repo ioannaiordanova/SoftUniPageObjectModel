@@ -24,9 +24,9 @@ namespace AutomationPractice.Tests.Froms
             Driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
            
             _signInPage = new SignInPage(Driver);
-            PrerequisitesOfTests();
             _registrationFormPage = new RegistrationFormPage(Driver);   
             _user = RegistrationFormModelFactory.Create();
+            PrerequisitesOfTests();
         }
 
         [TearDown]

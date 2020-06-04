@@ -69,7 +69,7 @@ namespace AutomationPractice.Models
 
         public void SkipPostCode()
         {
-            this.City = null;
+            this.PostCode = null;
             this.ErrorMessage = "The Zip/Postal code you've entered is invalid. It must follow this format: 00000";
         }
 
