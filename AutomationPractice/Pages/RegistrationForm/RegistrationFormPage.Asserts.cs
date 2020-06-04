@@ -9,7 +9,12 @@ namespace AutomationPractice.Pages.RegistrationForm
     {
         public void AlaertContainsMessage(string Message)
         {
+          
             Assert.IsTrue(this.AlertDanger.Text.Contains(Message), "The results DIV doesn't contains the specified text.");
+        }
+
+        public void EmailFieldIsSameAsEntered(string expectedEmail) {
+            Assert.AreEqual(expectedEmail, GetAttribute_Value(Email));
         }
     }
 }

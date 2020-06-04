@@ -5,6 +5,7 @@ namespace AutomationPractice.Pages.SignInPage
 {
     public partial class SignInPage : BasePageAutomationPractice
     {
+        public string SignInEmail;
         public SignInPage(IWebDriver driver)
             : base(driver) { 
         }
@@ -16,7 +17,8 @@ namespace AutomationPractice.Pages.SignInPage
         }
 
         public void SignIn() {
-            this.EmailCreate.SendKeys(GetRandomEmail());
+            SignInEmail = GetRandomEmail();
+            this.EmailCreate.SendKeys(SignInEmail);
             this.SumbitCreateButton.Click();
         }
     }

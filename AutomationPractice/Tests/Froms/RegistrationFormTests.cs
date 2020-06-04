@@ -41,14 +41,20 @@ namespace AutomationPractice.Tests.Froms
             _signInPage.LoginButton.Click();      
             _signInPage.WaitForLoad();
             _signInPage.SignIn();
-          
-    }
+            _registrationFormPage.WaitForLoad();
+
+        }
+
+        [Test]
+        public void Test_EmailField_AsSignedIn() { 
+            _registrationFormPage.EmailFieldIsSameAsEntered(_signInPage.SignInEmail);
+        }
 
 
         [Test]
+      
         public void ErrorMessageDisplayed_When_SkipFirstName()
         {
-            _registrationFormPage.WaitForLoad();
             _user.SkipFirstName();
 
             _registrationFormPage.FillRegistrationInfo(_user);
@@ -59,7 +65,6 @@ namespace AutomationPractice.Tests.Froms
         [Test]
         public void ErrorMessageDisplayed_When_SkipLastName()
         {
-            _registrationFormPage.WaitForLoad();
             _user.SkipLastName();
            
             _registrationFormPage.FillRegistrationInfo(_user);
@@ -70,7 +75,6 @@ namespace AutomationPractice.Tests.Froms
         [Test]
         public void ErrorMessageDisplayed_When_SkipEmail()
         {
-            _registrationFormPage.WaitForLoad();
             _user.SkipLastEmail();
             
             _registrationFormPage.FillRegistrationInfo(_user);
@@ -82,7 +86,6 @@ namespace AutomationPractice.Tests.Froms
         [Test]
         public void ErrorMessageDisplayed_When_SetInvalidEmail()
         {
-            _registrationFormPage.WaitForLoad();
             _user.SetInvalidEmail();
            
             _registrationFormPage.FillRegistrationInfo(_user);
@@ -94,7 +97,7 @@ namespace AutomationPractice.Tests.Froms
         [Test]
         public void ErrorMessageDisplayed_When_SkipPassword()
         {
-            _registrationFormPage.WaitForLoad();
+           
             _user.SkipPassword();
             
             _registrationFormPage.FillRegistrationInfo(_user);
@@ -105,7 +108,6 @@ namespace AutomationPractice.Tests.Froms
         [Test]
         public void ErrorMessageDisplayed_When_SetInvalidPassord()
         {
-            _registrationFormPage.WaitForLoad();
             _user.SetInvalidPassword();
             
             _registrationFormPage.FillRegistrationInfo(_user);
@@ -117,7 +119,7 @@ namespace AutomationPractice.Tests.Froms
         [Test]
         public void ErrorMessageDisplayed_When_SkipCity()
         {
-            _registrationFormPage.WaitForLoad();
+          
             _user.SkipCity();
            
             _registrationFormPage.FillRegistrationInfo(_user);
@@ -128,7 +130,7 @@ namespace AutomationPractice.Tests.Froms
         [Test]
         public void ErrorMessageDisplayed_When_SkipPostCode()
         {
-            _registrationFormPage.WaitForLoad();
+           
             _user.SkipPostCode();
            
             _registrationFormPage.FillRegistrationInfo(_user);
@@ -139,7 +141,7 @@ namespace AutomationPractice.Tests.Froms
         [Test]
         public void ErrorMessageDisplayed_When_SkipMobile()
         {
-            _registrationFormPage.WaitForLoad();
+           
             _user.SkipMobile();
             
             _registrationFormPage.FillRegistrationInfo(_user);

@@ -14,6 +14,7 @@ namespace AutomationPractice.Pages.RegistrationForm
         {
         }
 
+
         public void FillRegistrationInfo(RegistrationFormModel clientInfo)
         {
             if (clientInfo.FirstName != null)
@@ -40,6 +41,12 @@ namespace AutomationPractice.Pages.RegistrationForm
             if (clientInfo.Mobile != null)
                 this.Mobile.SendKeys(clientInfo.Mobile);
             this.SubmitButton.Submit();
+        }
+
+        [Obsolete]
+        public virtual new void WaitForLoad(int timeoutSec=5) {
+            WebDriverWait _wait = new WebDriverWait(Driver, new TimeSpan(0, 0, timeoutSec));
+            _wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.required > input#email")));
         }
 
     }

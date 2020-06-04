@@ -9,7 +9,6 @@ namespace AutomationPractice.Pages
         public BasePage(IWebDriver driver)
         {
             Driver = driver;
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
         }
 
         public IWebDriver Driver { get; }

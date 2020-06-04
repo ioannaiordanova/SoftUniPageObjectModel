@@ -13,7 +13,7 @@ namespace AutomationPractice.Pages.RegistrationForm
 
         public IWebElement FirstName => Driver.FindElement(By.Id("customer_firstname"));
         public IWebElement LastName => Driver.FindElement(By.Id("customer_lastname"));
-        public IWebElement Email => Driver.FindElement(By.Id("email"));
+        public IWebElement Email => Driver.FindElement(By.CssSelector("div.required > input#email"));
         public IWebElement Password => Driver.FindElement(By.Id("passwd"));
         public IWebElement Address1 => Driver.FindElement(By.Id("address1"));
         public IWebElement City => Driver.FindElement(By.Id("city"));

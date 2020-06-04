@@ -11,5 +11,9 @@ namespace AutomationPractice.Pages
         { 
            
         }
+
+        public string GetAttribute_Value(IWebElement element) {
+            return element.GetAttribute("value");
+        }
     }
 }
