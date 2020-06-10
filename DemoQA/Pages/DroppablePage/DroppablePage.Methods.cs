@@ -11,24 +11,24 @@ namespace AutomationPractice.Pages.Droppable
         public DroppablePage(IWebDriver driver, Actions builder) : base(driver, builder){ }
 
 
-        public void MoveDraggableByOffset(int X, int Y) {
+        public void MoveDragMeByOffset(int X, int Y) {
            Builder
-                  .ClickAndHold(Draggable)
+                  .ClickAndHold(DragMe)
                   .MoveByOffset(X, Y)
                   .Click()
                   .Perform();
         }
 
-        public void DragAndDrop() {
+        public void DragMeAndDropHere() {
             Builder
-                  .DragAndDrop(Draggable, Droppable)
+                  .DragAndDrop(DragMe, DropHere)
                   .Perform();
         }
 
-        public void MoveDraggableToElement(IWebElement element)
+        public void MoveDragMeToElement(IWebElement element)
         {
             Builder
-                    .ClickAndHold(Draggable)
+                    .ClickAndHold(DragMe)
                     .MoveToElement(element)
                     .Click()
                     .Perform();
@@ -37,12 +37,12 @@ namespace AutomationPractice.Pages.Droppable
 
         public string GetDroppableColor()
         {
-            return Droppable.GetCssValue("background");
+            return DropHere.GetCssValue("background");
         }
 
         public string GetDroppableText()
         {
-            return Droppable.Text;
+            return DropHere.Text;
         }
 
         public override void ClickOnSideBarMenuItem()

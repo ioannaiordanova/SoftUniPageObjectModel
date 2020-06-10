@@ -6,6 +6,7 @@ namespace AutomationPractice.Pages
 {
     public class BasePage
     {
+        protected virtual string Url { get; }
         public BasePage(IWebDriver driver)
         {
             Driver = driver;
@@ -16,6 +17,9 @@ namespace AutomationPractice.Pages
 
         public WebDriverWait Wait { get; }
 
+        public void NavigateTo() {
+            Driver.Navigate().GoToUrl(Url);
+        }
         public IWebElement ScrollTo(IWebElement element)
         {
             ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);

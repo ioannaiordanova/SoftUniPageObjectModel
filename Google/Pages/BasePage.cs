@@ -4,8 +4,9 @@ using System;
 
 namespace SoftUni.Pages
 {
-    public class BasePage
+    public abstract class BasePage
     {
+        protected abstract string Url { get;}
         public BasePage(IWebDriver driver)
         {
             Driver = driver;
@@ -15,6 +16,11 @@ namespace SoftUni.Pages
         public IWebDriver Driver { get; }
 
         public WebDriverWait Wait { get; }
+
+        public void NavigateTo()
+        {
+            Driver.Navigate().GoToUrl(Url);
+        }
 
         public IWebElement ScrollTo(IWebElement element)
         {

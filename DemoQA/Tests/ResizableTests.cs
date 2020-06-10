@@ -13,7 +13,6 @@ namespace AutomationPractice.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            Driver.Navigate().GoToUrl("http://demoqa.com/");
             _resizablePage = new ResizablePage(Driver,Builder);
             _resizablePage.NavigateToPage();
         }

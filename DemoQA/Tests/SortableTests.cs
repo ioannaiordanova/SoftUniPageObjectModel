@@ -1,4 +1,5 @@
 ﻿using AutomationPractice.Pages.SortablePage;
+using DemoQA.Pages.HomePage;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -9,12 +10,12 @@ namespace AutomationPractice.Tests
     class SortableTests : BaseTest
     {
         private SortablePage _sortablePage;
+      
         [SetUp]
         public void SetUp() {
             Initialize();
-            Driver.Navigate().GoToUrl("http://demoqa.com/");
             _sortablePage = new SortablePage(Driver, Builder);
-            _sortablePage.NavigateToPage();
+            _sortablePage.NavigateToPage();      
         }
 
         [TearDown]

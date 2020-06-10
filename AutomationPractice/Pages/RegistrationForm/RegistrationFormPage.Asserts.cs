@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AutomationPractice.Pages.RegistrationForm
 {
-    public partial class RegistrationFormPage : BasePageAutomationPractice
+    public partial class RegistrationFormPage : AutomationPractice
     {
         public void AlaertContainsMessage(string Message)
         {

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AutomationPractice.Pages.RegistrationForm
 {
-    public partial class RegistrationFormPage : BasePageAutomationPractice
+    public partial class RegistrationFormPage : AutomationPractice
     {
         public RegistrationFormPage(IWebDriver driver)
            : base(driver)

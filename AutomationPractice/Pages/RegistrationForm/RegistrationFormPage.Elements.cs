@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AutomationPractice.Pages.RegistrationForm
 {
-   public partial class RegistrationFormPage : BasePageAutomationPractice
+   public partial class RegistrationFormPage : AutomationPractice
     {
         public IWebElement TitleMr => Driver.FindElement(By.Id("id_gender1"));
         public IWebElement TitleMrs => Driver.FindElement(By.Id("id_gender2"));

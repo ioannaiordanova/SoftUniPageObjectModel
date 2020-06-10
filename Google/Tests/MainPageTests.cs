@@ -13,8 +13,8 @@ namespace Google.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            Driver.Navigate().GoToUrl("https://www.google.com");
             _mainPage = new MainPage(Driver);
+            _mainPage.NavigateTo();
         }
 
         [TearDown]

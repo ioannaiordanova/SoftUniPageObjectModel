@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AutomationPractice.Pages.SignInPage
 {
-    public partial class SignInPage : BasePageAutomationPractice
+    public partial class SignInPage : AutomationPractice
     {
         private IWebElement EmailCreate => Driver.FindElement(By.Name("email_create"));
 

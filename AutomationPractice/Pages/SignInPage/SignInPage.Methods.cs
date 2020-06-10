@@ -3,8 +3,9 @@ using AutoFixture;
 
 namespace AutomationPractice.Pages.SignInPage
 {
-    public partial class SignInPage : BasePageAutomationPractice
+    public partial class SignInPage : AutomationPractice
     {
+        protected override string Url => "http://automationpractice.com/index.php?controller=authentication&back=my-account";
         public string SignInEmail;
         public SignInPage(IWebDriver driver)
             : base(driver) { 

@@ -6,10 +6,10 @@ using System.Text;
 
 namespace AutomationPractice.Pages
 {
-    public partial class BasePageDemoQA: BasePage
+    public partial class DemoQAPage: BasePage
     {
         public Actions Builder { get; }
-        public BasePageDemoQA(IWebDriver driver, Actions builder=null) :base(driver) {
+        public DemoQAPage(IWebDriver driver, Actions builder=null) :base(driver) {
             Builder = builder;
         }
 
@@ -19,11 +19,6 @@ namespace AutomationPractice.Pages
 
         public int getLogoHeight() {
             return Logo.Size.Height;
-        }
-
-        public void SelectFromMainMenu(string sectionName)
-        {
-            MainMenu(sectionName).Click();
         }
     }
 }

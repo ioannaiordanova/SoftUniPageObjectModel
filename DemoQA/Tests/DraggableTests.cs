@@ -13,7 +13,6 @@ namespace AutomationPractice.Tests
         public void Setup()
         {
             Initialize();
-            Driver.Navigate().GoToUrl("http://demoqa.com/");
             _draggablePage = new DraggablePage(Driver, Builder);
             _draggablePage.NavigateToPage();
 
@@ -34,7 +33,7 @@ namespace AutomationPractice.Tests
             int offsetX = 100;
             int offsetY = 50;
 
-            _draggablePage.MoveByOffsetXY(offsetX, offsetY);
+            _draggablePage.MoveDragBoxByOffsetXY(offsetX, offsetY);
 
             Assert.Multiple(() =>
             {
@@ -47,7 +46,7 @@ namespace AutomationPractice.Tests
         [Obsolete]
         public void Draggable_DragAndDrop_Test()
         {
-            _draggablePage.DragAndDropToElement(_draggablePage.Logo);
+            _draggablePage.DragBoxDropToElement(_draggablePage.Logo);
 
             Assert.Multiple(() =>
             {
@@ -62,7 +61,7 @@ namespace AutomationPractice.Tests
         public void Draggable_MoveToElement_Test()
         {
 
-            _draggablePage.MoveToElement(_draggablePage.Logo);
+            _draggablePage.MoveDragBoxToElement(_draggablePage.Logo);
 
             Assert.Multiple(() =>
             {

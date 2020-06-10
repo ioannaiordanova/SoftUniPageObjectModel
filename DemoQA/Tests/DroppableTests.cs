@@ -9,7 +9,6 @@ namespace AutomationPractice.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            Driver.Navigate().GoToUrl("http://demoqa.com/");
             _droppablePage = new DroppablePage(Driver, Builder);
             _droppablePage.NavigateToPage();
 
@@ -26,26 +25,26 @@ namespace AutomationPractice.Tests
             int offsetX = 250;
             int offsetY = 50;
 
-            _droppablePage.MoveDraggableByOffset(offsetX, offsetY);
+            _droppablePage.MoveDragMeByOffset(offsetX, offsetY);
 
             Assert.IsTrue(_droppablePage.GetDroppableText().Contains("Dropped!"));
         }
 
         [Test]
-        public void Droppable_DragAndDrop_Test()
+        public void DragMe_DragAndDrop_Test()
         {
             var colorBefore = _droppablePage.GetDroppableColor();
 
-            _droppablePage.DragAndDrop();
+            _droppablePage.DragMeAndDropHere();
            
             Assert.AreNotEqual(colorBefore, _droppablePage.GetDroppableColor());
         }
 
 
         [Test]
-        public void Droppable_MoveToElement_Test()
+        public void DragMe_Move_To_DropHere_Test()
         {
-            _droppablePage.MoveDraggableToElement(_droppablePage.Droppable);
+            _droppablePage.MoveDragMeToElement(_droppablePage.DropHere);
 
             Assert.IsTrue(_droppablePage.GetDroppableText().Contains("Dropped!"));
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SoftUni.Pages.QAAutomationPage
 {
-    public partial class QAAutomationPage : BaseSoftUniPage
+    public partial class QAAutomationPage : SoftUniPage
     {
     
         IWebElement H1 => Driver.FindElement(By.XPath("//h1"));

@@ -6,8 +6,8 @@ namespace AutomationPractice.Pages.Droppable
 {
    public partial class DroppablePage : SideBarMenu
     {
-        public IWebElement Draggable => Driver.FindElement(By.Id("draggable"));
+        public IWebElement DragMe => Driver.FindElement(By.Id("draggable"));
 
-        public IWebElement Droppable => Driver.FindElement(By.Id("droppable"));
+        public IWebElement DropHere => Driver.FindElement(By.Id("droppable"));
     }
 }

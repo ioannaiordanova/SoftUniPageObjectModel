@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using SoftUni.Pages;
 using SoftUni.Pages.QAAutomationPage;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,13 @@ namespace SoftUni.Tests
     class QAAutomationTests : BaseTest
     {
         protected QAAutomationPage _qaAutomationPage;
+        protected SoftUniPage _softUniPage;
         [SetUp]
         public void SetUp() {
             Initialize();
-            Driver.Navigate().GoToUrl("http://www.softuni.bg");
+            _softUniPage = new SoftUniPage(Driver);
             _qaAutomationPage = new QAAutomationPage(Driver);
+            _softUniPage.NavigateTo();
         }
 
         [TearDown]
@@ -25,10 +28,10 @@ namespace SoftUni.Tests
         [Obsolete]
         public void QA_Automation_H1() {
             _qaAutomationPage.GetMainMenu((int)MainMenu.Education).Click();
-            
-            _qaAutomationPage.SubMenuAutomation.Click();
 
-            _qaAutomationPage.Test_H1_Text("QA Automation - май 2020");
+            _qaAutomationPage.Select_MenuCourse_QA();
+
+            _qaAutomationPage.Test_H1_Text("МОДУЛ: Quality Assurance - октомври 2019");
         }
     }
 }

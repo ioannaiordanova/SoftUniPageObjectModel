@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AutomationPractice.Pages
 {
-    public partial class BasePageAutomationPractice : BasePage
+    public partial class AutomationPractice : BasePage
     {
         public IWebElement LoginButton => Driver.FindElement(By.ClassName("login"));
     }

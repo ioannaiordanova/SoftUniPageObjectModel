@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SoftUni.Pages.QAAutomationPage
 {
-    public partial class QAAutomationPage : BaseSoftUniPage
+    public partial class QAAutomationPage : SoftUniPage
     {
         [Obsolete]
         public void Test_H1_Text(string Text) {

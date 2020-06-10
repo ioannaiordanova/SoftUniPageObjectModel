@@ -20,10 +20,9 @@ namespace AutomationPractice.Tests.Froms
         [Obsolete]
         public void Setup()
         {
-            Initialize();
-            Driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
-           
+            Initialize(); 
             _signInPage = new SignInPage(Driver);
+            _signInPage.NavigateToMainPage();
             _registrationFormPage = new RegistrationFormPage(Driver);   
             _user = RegistrationFormModelFactory.Create();
             PrerequisitesOfTests();

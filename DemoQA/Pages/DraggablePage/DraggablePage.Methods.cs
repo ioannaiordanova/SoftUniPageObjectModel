@@ -21,20 +21,20 @@ namespace AutomationPractice.Pages.DraggablePage
             return DragBox.Location.Y;
         }
 
-        public void MoveByOffsetXY(int X, int Y) {
+        public void MoveDragBoxByOffsetXY(int X, int Y) {
                 Builder
                    .ClickAndHold(this.DragBox)
                    .MoveByOffset(X, Y)
                    .Perform();
         }
 
-        public void DragAndDropToElement(IWebElement element) {
+        public void DragBoxDropToElement(IWebElement element) {
            Builder
                   .DragAndDrop(DragBox, element)
                   .Perform();
         }
 
-        public void MoveToElement(IWebElement element)
+        public void MoveDragBoxToElement(IWebElement element)
         {
             Builder
                    .DragAndDrop(DragBox, element)

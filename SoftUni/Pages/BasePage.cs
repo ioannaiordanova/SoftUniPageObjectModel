@@ -4,11 +4,17 @@ using System;
 
 namespace SoftUni.Pages
 {
-    public class BasePage
+    public abstract class BasePage
     {
+        protected abstract string Url { get; }
         public BasePage(IWebDriver driver)
         {
             Driver = driver;
+        }
+
+        public void NavigateTo()
+        {
+            Driver.Navigate().GoToUrl(Url);
         }
 
         public IWebDriver Driver { get; }
