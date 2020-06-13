@@ -12,15 +12,7 @@ namespace AutomationPractice.Pages.DraggablePage
            
         }
 
-        public int getDraggablePositionX() {
-            return DragBox.Location.X;
-        }
-
-        public int getDraggablePositionY()
-        {
-            return DragBox.Location.Y;
-        }
-
+       
         public void MoveDragBoxByOffsetXY(int X, int Y) {
                 Builder
                    .ClickAndHold(this.DragBox)

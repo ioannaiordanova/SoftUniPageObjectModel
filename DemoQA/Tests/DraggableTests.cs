@@ -1,4 +1,5 @@
 ﻿using AutomationPractice.Pages.DraggablePage;
+using AutomationPractice.Utilities.Extensions;
 using NUnit.Framework;
 using System;
 
@@ -28,8 +29,8 @@ namespace AutomationPractice.Tests
         [Obsolete]
         public void Draggable_MoveByOffsetXY_Test()
         {
-            int PositionXBefore = _draggablePage.getDraggablePositionX();
-            int PositionYBefore = _draggablePage.getDraggablePositionY();
+            int PositionXBefore = Driver.XOf(_draggablePage.DragBox);
+            int PositionYBefore = Driver.YOf(_draggablePage.DragBox);
             int offsetX = 100;
             int offsetY = 50;
 
@@ -37,8 +38,8 @@ namespace AutomationPractice.Tests
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(PositionXBefore + offsetX, _draggablePage.getDraggablePositionX(), "Position X before+offsetX==Position X After");
-                Assert.AreEqual(PositionYBefore + offsetY, _draggablePage.getDraggablePositionY(), "Position Y Before+offsetY == Position Y After");
+                Assert.AreEqual(PositionXBefore + offsetX, Driver.XOf(_draggablePage.DragBox), "Position X before+offsetX==Position X After");
+                Assert.AreEqual(PositionYBefore + offsetY, Driver.YOf(_draggablePage.DragBox), "Position Y Before+offsetY == Position Y After");
             });
         }
 
@@ -50,8 +51,8 @@ namespace AutomationPractice.Tests
 
             Assert.Multiple(() =>
             {
-                Assert.GreaterOrEqual(_draggablePage.getDraggablePositionY(), _draggablePage.getLogoLocationY());
-                Assert.LessOrEqual(_draggablePage.getDraggablePositionY(), _draggablePage.getLogoLocationY() + _draggablePage.getLogoHeight());
+                Assert.GreaterOrEqual(Driver.YOf(_draggablePage.DragBox), Driver.YOf(_draggablePage.Logo));
+                Assert.LessOrEqual(Driver.YOf(_draggablePage.DragBox), Driver.YOf(_draggablePage.Logo) + _draggablePage.GetLogoHeight());
             });
         }
 
@@ -65,8 +66,8 @@ namespace AutomationPractice.Tests
 
             Assert.Multiple(() =>
             {
-                Assert.GreaterOrEqual(_draggablePage.getDraggablePositionY(), _draggablePage.getLogoLocationY());
-                Assert.LessOrEqual(_draggablePage.getDraggablePositionY(), _draggablePage.getLogoLocationY() + _draggablePage.getLogoHeight());
+                Assert.GreaterOrEqual(Driver.YOf(_draggablePage.DragBox), Driver.YOf(_draggablePage.Logo));
+                Assert.LessOrEqual(Driver.YOf(_draggablePage.DragBox), Driver.YOf(_draggablePage.Logo) + _draggablePage.GetLogoHeight());
             });
 
         }

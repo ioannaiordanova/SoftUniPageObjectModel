@@ -8,5 +8,14 @@ namespace AutomationPractice.Utilities.Extensions
         {
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
+
+        public static int YOf(this IWebDriver driver, IWebElement element) {
+            return element.Location.Y;
+        }
+
+        public static int XOf(this IWebDriver driver, IWebElement element)
+        {
+            return element.Location.X;
+        }
     }
 }

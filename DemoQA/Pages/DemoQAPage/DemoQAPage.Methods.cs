@@ -13,11 +13,8 @@ namespace AutomationPractice.Pages
             Builder = builder;
         }
 
-        public int getLogoLocationY() {
-            return Logo.Location.Y;
-        }
 
-        public int getLogoHeight() {
+        public int GetLogoHeight() {
             return Logo.Size.Height;
         }
     }
