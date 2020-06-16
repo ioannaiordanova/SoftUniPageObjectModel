@@ -1,7 +1,10 @@
 ﻿using Google.Pages.MainPage;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Google.Tests
@@ -19,6 +22,12 @@ namespace Google.Tests
 
         [TearDown]
         public void TearDown() {
+            if (TestContext.CurrentContext.Result.Outcome == ResultState.Success) {
+                var path = "C:";
+                
+                var screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
+                screenshot.SaveAsFile($@"{path}\\{TestContext.CurrentContext.Test.FullName}.png", ScreenshotImageFormat.Png);
+            }
             Driver.Quit();
         }
 
