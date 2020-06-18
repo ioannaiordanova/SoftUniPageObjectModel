@@ -80,18 +80,18 @@ namespace DemoQA
 
        
        
-        public void Click()
+        public WebElement Click()
         {
             ScrollTo();
             WaitToBeClickable(By);
             _webElement?.Click();
+            return this;
         }
 
         public WebElement MoveByOffset(int x, int y) {
             _builder.ClickAndHold(_webElement) 
                     .MoveByOffset(x, y)
-                    .Click()
-                    .Perform(); ;
+                    .Release();
             return this;
         }
 

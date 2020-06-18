@@ -25,7 +25,8 @@ namespace DemoQA.Tests
             int offsetX = 250;
             int offsetY = 50;
 
-            _droppablePage.DragMe.MoveByOffset(offsetX, offsetY);
+            _droppablePage.DragMe.MoveByOffset(offsetX, offsetY)
+                                .Perform(); ;
 
             Assert.IsTrue(_droppablePage.DropHere.Text.Contains("Dropped!"));
         }

@@ -3,7 +3,7 @@ using DemoQA.Tests;
 using NUnit.Framework;
 using System;
 
-namespace AutomationPractice.Tests
+namespace DemoQA.Tests
 {
     class ResizableTests :BaseTest
     {
@@ -30,15 +30,13 @@ namespace AutomationPractice.Tests
             int offsetY = 50;
 
             _resizablePage.ResizableBoxHandle.MoveToElement()
-                                        .MoveByOffset(1, 1)
-                                        .ClickAndHold()
                                         .MoveByOffset(offsetX, offsetY)
                                         .Perform();
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(widthBefore + offsetX, _resizablePage.ResizableBox.Width, 20);
-                Assert.AreEqual(heightBefore + offsetY, _resizablePage.ResizableBox.Height, 20);
+                Assert.AreEqual(widthBefore + offsetX, _resizablePage.ResizableBox.Width, 10);
+                Assert.AreEqual(heightBefore + offsetY, _resizablePage.ResizableBox.Height, 10);
             });
 
         }
@@ -49,8 +47,6 @@ namespace AutomationPractice.Tests
         {   
           
          _resizablePage.ResizableBoxHandle.MoveToElement()
-                                          .MoveByOffset(1, 1)
-                                          .ClickAndHold()
                                           .MoveByOffset(300, 400);
 
             Assert.Throws<OpenQA.Selenium.WebDriverException>(delegate {

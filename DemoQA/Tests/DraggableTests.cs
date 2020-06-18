@@ -34,7 +34,9 @@ namespace DemoQA.Tests
             int offsetY = 50;
 
             _draggablePage.DragBox
-                        .MoveByOffset(offsetX, offsetY);
+                        .MoveByOffset(offsetX, offsetY)
+                        .Click()
+                        .Perform() ;
 
             Assert.Multiple(() =>
             {
