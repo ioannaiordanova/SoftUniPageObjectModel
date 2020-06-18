@@ -2,7 +2,7 @@
 using System.Reflection;
 
 
-namespace AutomationPractice.Pages.SideBar
+namespace DemoQA.Pages.SideBar
 {
 	
 		public static class ExtensionMethods

@@ -8,21 +8,21 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace Google.Tests
+namespace Google
 {
     [TestFixture]
     public class BaseTest
     {
-        protected IWebDriver Driver { get; set; }
+        public IWebDriver Driver { get; set; }
 
 
 
         public void Initialize()
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--headless");
-            Driver = new RemoteWebDriver(new Uri("http://192.168.1.2:4444/wd/hub"), options);
-            //Driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            //ChromeOptions options = new ChromeOptions();
+            //options.AddArgument("--headless");
+            //Driver = new RemoteWebDriver(new Uri("http://192.168.1.2:4444/wd/hub"), options);
+            Driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             Driver.Manage().Window.Maximize();
           
         }

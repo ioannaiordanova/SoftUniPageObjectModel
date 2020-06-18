@@ -1,9 +1,7 @@
-﻿using AutomationPractice.Pages.ResizablePage;
-using AutomationPractice.Pages.SideBar;
+﻿using DemoQA.Pages.ResizablePage;
+using DemoQA.Tests;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AutomationPractice.Tests
 {
@@ -26,18 +24,21 @@ namespace AutomationPractice.Tests
         public void Resize_LessThatRestriction_Test()
         {
        
-            double widthBefore = _resizablePage.GetResizableBoxWidth();
-            double heightBefore = _resizablePage.GetResizableBoxHeight();
+            double widthBefore = _resizablePage.ResizableBox.Width;
+            double heightBefore = _resizablePage.ResizableBox.Height;
             int offsetX = 90;
             int offsetY = 50;
 
-            _resizablePage.ResizeActionWithoutPerform(offsetX, offsetY)
-                    .Perform();
+            _resizablePage.ResizableBoxHandle.MoveToElement()
+                                        .MoveByOffset(1, 1)
+                                        .ClickAndHold()
+                                        .MoveByOffset(offsetX, offsetY)
+                                        .Perform();
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(widthBefore + offsetX, _resizablePage.GetResizableBoxWidth(), 20);
-                Assert.AreEqual(heightBefore + offsetY, _resizablePage.GetResizableBoxHeight(), 20);
+                Assert.AreEqual(widthBefore + offsetX, _resizablePage.ResizableBox.Width, 20);
+                Assert.AreEqual(heightBefore + offsetY, _resizablePage.ResizableBox.Height, 20);
             });
 
         }
@@ -47,11 +48,14 @@ namespace AutomationPractice.Tests
         public void Resize_MoreThanRestriction_Test()
         {   
           
-              _resizablePage.ResizeActionWithoutPerform(300, 400);
+         _resizablePage.ResizableBoxHandle.MoveToElement()
+                                          .MoveByOffset(1, 1)
+                                          .ClickAndHold()
+                                          .MoveByOffset(300, 400);
 
-              Assert.Throws<OpenQA.Selenium.WebDriverException>(delegate {
+            Assert.Throws<OpenQA.Selenium.WebDriverException>(delegate {
 
-              Builder.Perform();
+                Builder.Perform();
             });
 
         }

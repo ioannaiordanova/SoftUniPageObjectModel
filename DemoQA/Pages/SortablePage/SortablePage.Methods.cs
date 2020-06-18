@@ -1,13 +1,14 @@
-﻿using AutomationPractice.Pages.SideBar;
+﻿
+using DemoQA.Pages.SideBar;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
 
-namespace AutomationPractice.Pages.SortablePage
+namespace DemoQA.Pages.SortablePage
 {
     public partial class SortablePage : SideBarMenu
     {
-        public SortablePage(IWebDriver driver, Actions builder) : base(driver, builder) {
+        public SortablePage(WebDriver driver, Actions builder) : base(driver, builder) {
 
         }
 
@@ -18,7 +19,7 @@ namespace AutomationPractice.Pages.SortablePage
            
         }
 
-        public IWebElement GetGridElementByIndex(int i)
+        public WebElement GetGridElementByIndex(int i)
         {
             if (IndexExists(i))
             {
@@ -29,7 +30,7 @@ namespace AutomationPractice.Pages.SortablePage
 
        
 
-        public IWebElement GetListElementByIndex(int i){
+        public WebElement GetListElementByIndex(int i){
             if (IndexExists(i))
             {
                 return ListItems[i-1];
@@ -39,18 +40,6 @@ namespace AutomationPractice.Pages.SortablePage
 
         public string GetListItemText(int i) {
            return GetListElementByIndex(i).Text;
-        }
-
-        public int GetListElementHeight(int i) {
-            return GetListElementByIndex(i).Size.Height;
-        }
-
-        public void MoveListElementOneBelow(int i) {
-
-            Builder
-               .DragAndDropToOffset(GetListElementByIndex(i), 0, GetListElementHeight(i) + 10)
-               .Release(GetListElementByIndex(i))
-               .Perform();
         }
 
         public override void ClickOnSideBarMenuItem()

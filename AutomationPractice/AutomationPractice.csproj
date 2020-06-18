@@ -36,6 +36,7 @@
     <Compile Remove="Tests\SortableTests.cs" />
   </ItemGroup>
 
+ 
   <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.11.0" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />

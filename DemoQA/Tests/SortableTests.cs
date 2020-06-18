@@ -1,11 +1,9 @@
-﻿using AutomationPractice.Pages.SortablePage;
-using DemoQA.Pages.HomePage;
+﻿using DemoQA.Pages.SortablePage;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using System;
 
 
-namespace AutomationPractice.Tests
+namespace DemoQA.Tests
 {
     class SortableTests : BaseTest
     {
@@ -31,11 +29,8 @@ namespace AutomationPractice.Tests
            _sortablePage.GridTab.Click();     
             string TextOne = _sortablePage.GetGridElementByIndex(1).Text;
 
-             Builder
-                  .DragAndDropToOffset(_sortablePage.GetGridElementByIndex(1), 2 * _sortablePage.GetGridElementByIndex(1).Size.Width, 2 * _sortablePage.GetGridElementByIndex(1).Size.Height)
-                  .Release(_sortablePage.GetGridElementByIndex(1))
-                  .Perform();
-
+            _sortablePage.GetGridElementByIndex(1).DragAndDropToOffset(2 * _sortablePage.GetGridElementByIndex(1).Width, 2 * _sortablePage.GetGridElementByIndex(1).Height);
+         
             Assert.AreEqual(TextOne, _sortablePage.GetGridElementByIndex(9).Text);         
         }
 
@@ -46,7 +41,7 @@ namespace AutomationPractice.Tests
         {
             string TextInTheSecond = _sortablePage.GetListItemText(2);
 
-            _sortablePage.MoveListElementOneBelow(1);
+            _sortablePage.GetListElementByIndex(1).MoveListElementOneBelow();
 
             Assert.AreEqual(TextInTheSecond, _sortablePage.GetListItemText(1));
         }

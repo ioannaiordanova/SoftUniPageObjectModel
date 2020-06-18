@@ -1,7 +1,7 @@
-﻿using AutomationPractice.Pages.Droppable;
+﻿using DemoQA.Pages.Droppable;
 using NUnit.Framework;
 
-namespace AutomationPractice.Tests
+namespace DemoQA.Tests
 {
     class DroppableTests : BaseTest
     {
@@ -25,28 +25,28 @@ namespace AutomationPractice.Tests
             int offsetX = 250;
             int offsetY = 50;
 
-            _droppablePage.MoveDragMeByOffset(offsetX, offsetY);
+            _droppablePage.DragMe.MoveByOffset(offsetX, offsetY);
 
-            Assert.IsTrue(_droppablePage.GetDroppableText().Contains("Dropped!"));
+            Assert.IsTrue(_droppablePage.DropHere.Text.Contains("Dropped!"));
         }
 
         [Test]
         public void DragMe_DragAndDrop_Test()
         {
-            var colorBefore = _droppablePage.GetDroppableColor();
+            var colorBefore = _droppablePage.DropHere.GetCssValue("background");
 
-            _droppablePage.DragMeAndDropHere();
+            _droppablePage.DragMe.DragAndDrop(_droppablePage.DropHere);
            
-            Assert.AreNotEqual(colorBefore, _droppablePage.GetDroppableColor());
+            Assert.AreNotEqual(colorBefore, _droppablePage.DropHere.GetCssValue("background"));
         }
 
 
         [Test]
         public void DragMe_Move_To_DropHere_Test()
         {
-            _droppablePage.MoveDragMeToElement(_droppablePage.DropHere);
+            _droppablePage.DragMe.MoveToElement(_droppablePage.DropHere);
 
-            Assert.IsTrue(_droppablePage.GetDroppableText().Contains("Dropped!"));
+            Assert.IsTrue(_droppablePage.DropHere.Text.Contains("Dropped!"));
 
         }
 

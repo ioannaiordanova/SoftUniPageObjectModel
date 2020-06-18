@@ -1,8 +1,4 @@
 ﻿using OpenQA.Selenium;
-using SoftUni.Pages;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Google.Pages.MainPage
 {

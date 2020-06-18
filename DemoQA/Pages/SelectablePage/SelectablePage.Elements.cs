@@ -1,13 +1,13 @@
-﻿using AutomationPractice.Pages.SideBar;
+﻿using DemoQA.Pages.SideBar;
 using OpenQA.Selenium;
 using System.Collections.Generic;
 
 
-namespace AutomationPractice.Pages.Selectable
+namespace DemoQA.Pages.Selectable
 {
     public partial class SelectablePage : SideBarMenu
     {
-        public IList<IWebElement> ListOfSelectables => Driver.FindElements(By.CssSelector("#verticalListContainer > li"));
+        public IList<WebElement> ListOfSelectables => Driver.FindElements(By.CssSelector("#verticalListContainer > li"));
 
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace AutomationPractice.Pages.SideBar
+namespace DemoQA.Pages.SideBar
 {
     class IdValue : Attribute
     {

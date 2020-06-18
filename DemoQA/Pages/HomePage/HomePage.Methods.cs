@@ -1,15 +1,11 @@
-﻿using AutomationPractice.Pages;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OpenQA.Selenium;
 
-namespace DemoQA.Pages.HomePage
+namespace DemoQA.Pages
 {
     public partial class HomePage:DemoQAPage
     {
         protected override string Url => "http://demoqa.com/";
-        public HomePage(IWebDriver driver) : base(driver) { 
+        public HomePage(WebDriver driver) : base(driver) { 
         
         }
 

@@ -1,9 +1,11 @@
-﻿using AutomationPractice.Pages.Selectable;
+﻿using DemoQA.Pages.Selectable;
 using NUnit.Framework;
+using OpenQA.Selenium.Internal;
 using System;
+using System.Diagnostics;
+using System.Threading;
 
-
-namespace AutomationPractice.Tests
+namespace DemoQA.Tests
 {
     class SelectableTests:BaseTest
     {
@@ -24,11 +26,11 @@ namespace AutomationPractice.Tests
         [Obsolete]
         public void Selectable_SelectOne_Test()
         {
-            var ColorBefore = _selectablePage.GetCssValue(2);
+            var ColorBefore = _selectablePage.GetSelectableWithIndex(2).GetCssValue("background-color");
 
             _selectablePage.GetSelectableWithIndex(2).Click();
-          
-            Assert.AreNotEqual(ColorBefore, _selectablePage.GetCssValue(2));
+               
+            Assert.AreNotEqual(ColorBefore, _selectablePage.GetSelectableWithIndex(2).GetCssValue("background-color"));
         }
 
         [Test]
@@ -36,12 +38,13 @@ namespace AutomationPractice.Tests
         public void Selectable_SelectMoreThanOne_Test()
         {
            
-            var ColorBefore = _selectablePage.GetCssValue(2);
+            var ColorBefore = _selectablePage.GetSelectableWithIndex(2).GetCssValue("background-color");
 
             _selectablePage.GetSelectableWithIndex(2).Click();
             _selectablePage.GetSelectableWithIndex(4).Click();
+
            
-            Assert.AreNotEqual(ColorBefore, _selectablePage.GetCssValue(2));
+            Assert.AreNotEqual(ColorBefore, _selectablePage.GetSelectableWithIndex(2).GetCssValue("background-color"));
         }
     }
 }

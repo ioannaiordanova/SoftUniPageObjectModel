@@ -1,11 +1,11 @@
-﻿using DemoQA.Pages.HomePage;
+﻿
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutomationPractice.Pages.SideBar
+namespace DemoQA.Pages.SideBar
 {
    public partial class SideBarMenu : DemoQAPage
     {
@@ -17,7 +17,7 @@ namespace AutomationPractice.Pages.SideBar
 
            
         }
-        public SideBarMenu(IWebDriver driver, Actions builder=null) : base(driver, builder)
+        public SideBarMenu(WebDriver driver, Actions builder=null) : base(driver, builder)
         {
             this._homePage = new HomePage(driver);
         }
@@ -29,8 +29,8 @@ namespace AutomationPractice.Pages.SideBar
 
         public void ClickOnSideBarMenuItem(string Id)
         {
-            IWebElement menu_item = MenuList.FindElement(By.Id(Id));
-            ScrollTo(menu_item);
+            WebElement menu_item = MenuList.FindElement(By.Id(Id));
+            menu_item.ScrollTo();
             menu_item.Click();
         }
       

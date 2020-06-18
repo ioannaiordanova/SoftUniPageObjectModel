@@ -1,7 +1,7 @@
 ﻿
 
 
-namespace AutomationPractice.Pages.SideBar
+namespace DemoQA.Pages.SideBar
 {
     public enum SideBarEnum
     {

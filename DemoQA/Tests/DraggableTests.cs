@@ -1,9 +1,8 @@
-﻿using AutomationPractice.Pages.DraggablePage;
-using AutomationPractice.Utilities.Extensions;
+﻿using DemoQA.Pages.DraggablePage;
 using NUnit.Framework;
 using System;
 
-namespace AutomationPractice.Tests
+namespace DemoQA.Tests
 {
     class DraggableTests : BaseTest
     {
@@ -29,17 +28,18 @@ namespace AutomationPractice.Tests
         [Obsolete]
         public void Draggable_MoveByOffsetXY_Test()
         {
-            int PositionXBefore = Driver.XOf(_draggablePage.DragBox);
-            int PositionYBefore = Driver.YOf(_draggablePage.DragBox);
+            int PositionXBefore = _draggablePage.DragBox.X;
+            int PositionYBefore = _draggablePage.DragBox.Y;
             int offsetX = 100;
             int offsetY = 50;
 
-            _draggablePage.MoveDragBoxByOffsetXY(offsetX, offsetY);
+            _draggablePage.DragBox
+                        .MoveByOffset(offsetX, offsetY);
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(PositionXBefore + offsetX, Driver.XOf(_draggablePage.DragBox), "Position X before+offsetX==Position X After");
-                Assert.AreEqual(PositionYBefore + offsetY, Driver.YOf(_draggablePage.DragBox), "Position Y Before+offsetY == Position Y After");
+                Assert.AreEqual(PositionXBefore + offsetX, _draggablePage.DragBox.X, "Position X before+offsetX==Position X After");
+                Assert.AreEqual(PositionYBefore + offsetY, _draggablePage.DragBox.Y, "Position Y Before+offsetY == Position Y After");
             });
         }
 
@@ -47,12 +47,12 @@ namespace AutomationPractice.Tests
         [Obsolete]
         public void Draggable_DragAndDrop_Test()
         {
-            _draggablePage.DragBoxDropToElement(_draggablePage.Logo);
+            _draggablePage.DragBox.DragAndDrop(_draggablePage.Logo);
 
             Assert.Multiple(() =>
             {
-                Assert.GreaterOrEqual(Driver.YOf(_draggablePage.DragBox), Driver.YOf(_draggablePage.Logo));
-                Assert.LessOrEqual(Driver.YOf(_draggablePage.DragBox), Driver.YOf(_draggablePage.Logo) + _draggablePage.GetLogoHeight());
+                Assert.GreaterOrEqual(_draggablePage.DragBox.Y, _draggablePage.Logo.Y);
+                Assert.LessOrEqual(_draggablePage.DragBox.Y, _draggablePage.Logo.Y + _draggablePage.Logo.Height);
             });
         }
 
@@ -62,12 +62,12 @@ namespace AutomationPractice.Tests
         public void Draggable_MoveToElement_Test()
         {
 
-            _draggablePage.MoveDragBoxToElement(_draggablePage.Logo);
+            _draggablePage.DragBox.MoveToElement(_draggablePage.Logo);
 
             Assert.Multiple(() =>
             {
-                Assert.GreaterOrEqual(Driver.YOf(_draggablePage.DragBox), Driver.YOf(_draggablePage.Logo));
-                Assert.LessOrEqual(Driver.YOf(_draggablePage.DragBox), Driver.YOf(_draggablePage.Logo) + _draggablePage.GetLogoHeight());
+                Assert.GreaterOrEqual(_draggablePage.DragBox.Y, _draggablePage.Logo.Y);
+                Assert.LessOrEqual(_draggablePage.DragBox.Y, _draggablePage.Logo.Y + _draggablePage.Logo.Height);
             });
 
         }

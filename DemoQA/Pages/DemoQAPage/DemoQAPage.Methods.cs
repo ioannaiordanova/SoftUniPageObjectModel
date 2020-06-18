@@ -4,18 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutomationPractice.Pages
+namespace DemoQA.Pages
 {
     public partial class DemoQAPage: BasePage
     {
         public Actions Builder { get; }
-        public DemoQAPage(IWebDriver driver, Actions builder=null) :base(driver) {
+        public DemoQAPage(WebDriver driver, Actions builder=null) :base(driver) {
             Builder = builder;
         }
 
 
-        public int GetLogoHeight() {
-            return Logo.Size.Height;
-        }
+        
     }
 }

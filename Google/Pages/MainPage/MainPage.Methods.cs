@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using SoftUni.Pages;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Reflection;

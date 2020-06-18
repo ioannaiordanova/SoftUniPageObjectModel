@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 
-namespace SoftUni.Pages
+namespace Google
 {
     public abstract class BasePage
     {

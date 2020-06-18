@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutomationPractice.Pages
+namespace DemoQA.Pages
 {
    public partial class DemoQAPage : BasePage
     {
-        public IWebElement Logo => Driver.FindElement(By.CssSelector("a[href*='demoqa.com']"));
+        public WebElement Logo => Driver.FindElement(By.CssSelector("a[href*='demoqa.com']"));
     }
 }
