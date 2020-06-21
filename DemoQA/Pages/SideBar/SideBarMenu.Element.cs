@@ -1,7 +1,5 @@
-﻿
+﻿using Core;
 using OpenQA.Selenium;
-
-
 
 namespace DemoQA.Pages.SideBar
 {

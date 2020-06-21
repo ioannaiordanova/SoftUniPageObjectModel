@@ -1,11 +1,9 @@
-﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Core;
+using OpenQA.Selenium;
 
 namespace AutomationPractice.Pages
 {
-   public partial class AutomationPractice : BasePage
+    public partial class AutomationPractice : BasePage
     {
         private readonly string _url = "http://automationpractice.com/index.php";
         protected override string Url { 
@@ -15,17 +13,14 @@ namespace AutomationPractice.Pages
             }
         }
 
-        public AutomationPractice(IWebDriver driver) : base(driver)
+        public AutomationPractice(WebDriver driver) : base(driver)
         { 
            
         }
 
         public void NavigateToMainPage() {
-            Driver.Navigate().GoToUrl(_url);
+            Driver.GoToUrl(_url);
         }
 
-        public string GetAttribute_Value(IWebElement element) {
-            return element.GetAttribute("value");
-        }
     }
 }

@@ -1,15 +1,7 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-
-
-
-namespace SoftUni
+﻿namespace SoftUni
 {
-  
-        public enum MainMenu { 
+
+    public enum MainMenu { 
             AboutUs=1,
             Education,
             Work,

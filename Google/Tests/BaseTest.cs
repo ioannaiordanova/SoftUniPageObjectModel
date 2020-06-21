@@ -1,19 +1,13 @@
-﻿using NUnit.Framework;
+﻿using Core;
+using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.UI;
-using System;
-using System.IO;
-using System.Reflection;
 
 namespace Google
 {
     [TestFixture]
     public class BaseTest
     {
-        public IWebDriver Driver { get; set; }
+        public WebDriver Driver { get; set; }
 
 
 
@@ -22,9 +16,8 @@ namespace Google
             //ChromeOptions options = new ChromeOptions();
             //options.AddArgument("--headless");
             //Driver = new RemoteWebDriver(new Uri("http://192.168.1.2:4444/wd/hub"), options);
-            Driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            Driver.Manage().Window.Maximize();
-          
+            Driver = new WebDriver();
+            Driver.Start(Browser.Chrome);
         }
     }
 }

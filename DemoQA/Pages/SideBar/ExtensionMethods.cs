@@ -4,7 +4,6 @@ using System.Reflection;
 
 namespace DemoQA.Pages.SideBar
 {
-	
 		public static class ExtensionMethods
 		{
 			public static string GetStringValue(this Enum value)

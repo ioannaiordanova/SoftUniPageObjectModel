@@ -1,7 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AutomationPractice.Pages.RegistrationForm
 {
@@ -14,7 +11,7 @@ namespace AutomationPractice.Pages.RegistrationForm
         }
 
         public void EmailFieldIsSameAsEntered(string expectedEmail) {
-            Assert.AreEqual(expectedEmail, GetAttribute_Value(Email));
+            Assert.AreEqual(expectedEmail, Email.GetAttribute("value"));
         }
     }
 }

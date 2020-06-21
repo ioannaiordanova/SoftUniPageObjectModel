@@ -2,8 +2,6 @@
 using SoftUni.Pages;
 using SoftUni.Pages.QAAutomationPage;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SoftUni.Tests
 {
@@ -31,7 +29,7 @@ namespace SoftUni.Tests
 
             _qaAutomationPage.Select_MenuCourse_QA();
 
-            _qaAutomationPage.Test_H1_Text("МОДУЛ: Quality Assurance - октомври 2019");
+            _qaAutomationPage.Test_H1_Text("МОДУЛ: Quality Assurance - септември 2020");
         }
     }
 }

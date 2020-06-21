@@ -1,8 +1,5 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SoftUni.Pages.QAAutomationPage
 {

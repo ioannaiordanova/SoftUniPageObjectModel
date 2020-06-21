@@ -1,16 +1,14 @@
-﻿
+﻿using Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DemoQA.Pages.SideBar
 {
-   public partial class SideBarMenu : DemoQAPage
+    public partial class SideBarMenu : DemoQAPage
     {
         private HomePage _homePage;
-        private HomePage HomePage {
+        private HomePage HomePage 
+        {
             get {
                 return _homePage;
             }
@@ -34,7 +32,8 @@ namespace DemoQA.Pages.SideBar
             menu_item.Click();
         }
       
-        public void NavigateToPage() {
+        public void NavigateToPage() 
+        {
             HomePage.NavigateTo();
             HomePage.WaitForLoad();
             HomePage.SelectFromMainMenu("Interactions");

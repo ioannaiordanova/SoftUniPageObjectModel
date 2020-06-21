@@ -1,5 +1,5 @@
-﻿using DemoQA.Pages.SideBar;
-using OpenQA.Selenium;
+﻿using Core;
+using DemoQA.Pages.SideBar;
 using OpenQA.Selenium.Interactions;
 
 

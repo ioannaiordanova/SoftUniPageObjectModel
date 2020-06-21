@@ -1,4 +1,5 @@
-﻿using DemoQA.Pages.SideBar;
+﻿using Core;
+using DemoQA.Pages.SideBar;
 using OpenQA.Selenium;
 using System.Collections.Generic;
 
@@ -12,9 +13,6 @@ namespace DemoQA.Pages.SortablePage
 
         public WebElement Grid => Driver.FindElement(By.ClassName("create-grid"));
         public IList<WebElement> GridItems => Grid.FindElements(By.CssSelector("div.list-group-item.list-group-item-action"));
-
-      
-
 
     }
 }

@@ -4,7 +4,8 @@ namespace AutomationPractice.Factories
 {
     public static class RegistrationFormModelFactory
     {
-        public static RegistrationFormModel Create() { 
+        public static RegistrationFormModel Create() 
+        { 
             return new RegistrationFormModel
             {
                 FirstName = "FirstName",

@@ -1,5 +1,4 @@
 ﻿using DemoQA.Pages.ResizablePage;
-using DemoQA.Tests;
 using NUnit.Framework;
 using System;
 

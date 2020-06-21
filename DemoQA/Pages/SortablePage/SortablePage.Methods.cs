@@ -1,6 +1,5 @@
-﻿
+﻿using Core;
 using DemoQA.Pages.SideBar;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
 
@@ -8,15 +7,16 @@ namespace DemoQA.Pages.SortablePage
 {
     public partial class SortablePage : SideBarMenu
     {
-        public SortablePage(WebDriver driver, Actions builder) : base(driver, builder) {
+        public SortablePage(WebDriver driver, Actions builder) : base(driver, builder) 
+        {
 
         }
 
-        public bool IndexExists(int i) {
+        public bool IndexExists(int i) 
+        {
             if (ListItems.Count >= i)
                 return true;
-            else return false;
-           
+            else return false;     
         }
 
         public WebElement GetGridElementByIndex(int i)
@@ -30,7 +30,8 @@ namespace DemoQA.Pages.SortablePage
 
        
 
-        public WebElement GetListElementByIndex(int i){
+        public WebElement GetListElementByIndex(int i)
+        {
             if (IndexExists(i))
             {
                 return ListItems[i-1];
@@ -38,7 +39,8 @@ namespace DemoQA.Pages.SortablePage
             else return null;
         }
 
-        public string GetListItemText(int i) {
+        public string GetListItemText(int i) 
+        {
            return GetListElementByIndex(i).Text;
         }
 

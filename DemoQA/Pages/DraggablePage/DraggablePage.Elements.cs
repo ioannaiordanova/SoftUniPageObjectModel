@@ -1,4 +1,4 @@
-﻿
+﻿using Core;
 using DemoQA.Pages.SideBar;
 using OpenQA.Selenium;
 

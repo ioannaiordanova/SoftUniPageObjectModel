@@ -1,9 +1,6 @@
 ﻿using DemoQA.Pages.Selectable;
 using NUnit.Framework;
-using OpenQA.Selenium.Internal;
 using System;
-using System.Diagnostics;
-using System.Threading;
 
 namespace DemoQA.Tests
 {
@@ -11,14 +8,17 @@ namespace DemoQA.Tests
     {
         private SelectablePage _selectablePage;
         [SetUp]
-        public void SetUp() {
+        public void SetUp()
+        {
             Initialize();
             _selectablePage = new SelectablePage(Driver);
             _selectablePage.NavigateToPage();
         }
 
+
         [TearDown]
-        public void TearDown() {
+        public void TearDown() 
+        {
             Driver.Quit();
         }
 

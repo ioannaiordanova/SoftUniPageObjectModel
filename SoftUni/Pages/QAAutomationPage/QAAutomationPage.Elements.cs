@@ -1,14 +1,11 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Core;
+using OpenQA.Selenium;
 
 namespace SoftUni.Pages.QAAutomationPage
 {
     public partial class QAAutomationPage : SoftUniPage
     {
     
-        IWebElement H1 => Driver.FindElement(By.XPath("//h1"));
+        WebElement H1 => Driver.FindElement(By.XPath("//h1"));
     }
 }

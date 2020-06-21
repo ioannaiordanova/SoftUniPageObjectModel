@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Core;
+using OpenQA.Selenium;
 
 
 namespace SoftUni.Pages
@@ -6,10 +7,10 @@ namespace SoftUni.Pages
    public partial class SoftUniPage:BasePage
     {
         protected override string Url => "http://www.softuni.bg";
-        public SoftUniPage(IWebDriver driver) : base(driver) { 
+        public SoftUniPage(WebDriver driver) : base(driver) { 
         }
 
-        public IWebElement GetMainMenu(int MenuIndex)
+        public WebElement GetMainMenu(int MenuIndex)
         {
             return MenuItem(MenuIndex);
         }

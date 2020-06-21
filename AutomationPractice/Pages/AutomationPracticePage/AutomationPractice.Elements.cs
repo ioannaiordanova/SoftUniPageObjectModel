@@ -1,12 +1,10 @@
-﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Core;
+using OpenQA.Selenium;
 
 namespace AutomationPractice.Pages
 {
     public partial class AutomationPractice : BasePage
     {
-        public IWebElement LoginButton => Driver.FindElement(By.ClassName("login"));
+        public WebElement LoginButton => Driver.FindElement(By.ClassName("login"));
     }
 }

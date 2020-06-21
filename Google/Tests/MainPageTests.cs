@@ -32,7 +32,7 @@ namespace Google.Tests
         [Test]
         public void Google_First_Found_Result()
         {
-            _mainPage.SearchField.SendKeys("selenium");
+            _mainPage.SearchField.SetText("selenium");
             _mainPage.SearchField.Submit();
 
             _mainPage.FirstResultLink.Click();

@@ -1,4 +1,5 @@
-﻿using DemoQA.Pages.SideBar;
+﻿using Core;
+using DemoQA.Pages.SideBar;
 using OpenQA.Selenium;
 
 

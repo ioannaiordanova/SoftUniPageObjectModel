@@ -1,11 +1,11 @@
-﻿using DemoQA.Pages.SideBar;
-using OpenQA.Selenium;
+﻿using Core;
+using DemoQA.Pages.SideBar;
 using OpenQA.Selenium.Interactions;
 
 
 namespace DemoQA.Pages.Droppable
 {
-   public partial class DroppablePage: SideBarMenu
+    public partial class DroppablePage: SideBarMenu
     {
 
         public DroppablePage(WebDriver driver, Actions builder) : base(driver, builder){ }

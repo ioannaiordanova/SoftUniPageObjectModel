@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using AutoFixture;
+using Core;
 
 namespace AutomationPractice.Pages.SignInPage
 {
@@ -7,7 +8,7 @@ namespace AutomationPractice.Pages.SignInPage
     {
         protected override string Url => "http://automationpractice.com/index.php?controller=authentication&back=my-account";
         public string SignInEmail;
-        public SignInPage(IWebDriver driver)
+        public SignInPage(WebDriver driver)
             : base(driver) { 
         }
 
@@ -19,7 +20,7 @@ namespace AutomationPractice.Pages.SignInPage
 
         public void SignIn() {
             SignInEmail = GetRandomEmail();
-            this.EmailCreate.SendKeys(SignInEmail);
+            this.EmailCreate.SetText(SignInEmail);
             this.SumbitCreateButton.Click();
         }
     }

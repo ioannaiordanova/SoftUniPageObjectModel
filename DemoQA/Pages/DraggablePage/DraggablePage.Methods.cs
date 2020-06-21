@@ -1,14 +1,13 @@
-﻿using DemoQA.Pages.SideBar;
-using OpenQA.Selenium;
+﻿using Core;
+using DemoQA.Pages.SideBar;
 using OpenQA.Selenium.Interactions;
-
-
 
 namespace DemoQA.Pages.DraggablePage
 {
     public partial class DraggablePage : SideBarMenu
     {
-        public DraggablePage(WebDriver driver, Actions builder) : base(driver,builder) { 
+        public DraggablePage(WebDriver driver, Actions builder) : base(driver,builder) 
+        { 
            
         }
 

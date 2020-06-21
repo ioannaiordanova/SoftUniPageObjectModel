@@ -1,11 +1,13 @@
-﻿using OpenQA.Selenium;
+﻿using Core;
+using OpenQA.Selenium;
 
 namespace DemoQA.Pages
 {
     public partial class HomePage:DemoQAPage
     {
         protected override string Url => "http://demoqa.com/";
-        public HomePage(WebDriver driver) : base(driver) { 
+        public HomePage(WebDriver driver) : base(driver) 
+        { 
         
         }
 

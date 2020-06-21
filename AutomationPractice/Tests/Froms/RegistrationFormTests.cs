@@ -1,12 +1,9 @@
-﻿using AutoFixture;
-using AutomationPractice.Factories;
+﻿using AutomationPractice.Factories;
 using AutomationPractice.Models;
 using AutomationPractice.Pages.RegistrationForm;
 using AutomationPractice.Pages.SignInPage;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AutomationPractice.Tests.Froms
 {
