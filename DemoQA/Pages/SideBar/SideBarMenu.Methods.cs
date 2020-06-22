@@ -15,7 +15,7 @@ namespace DemoQA.Pages.SideBar
 
            
         }
-        public SideBarMenu(WebDriver driver, Actions builder=null) : base(driver, builder)
+        public SideBarMenu(WebDriver driver) : base(driver)
         {
             this._homePage = new HomePage(driver);
         }

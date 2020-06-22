@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 
 namespace Core
 {
@@ -14,19 +15,21 @@ namespace Core
     {
         private readonly IWebDriver _webDriver;
         private readonly IWebElement _webElement;
-        private static Actions _builder;
         private readonly By _by;
+        private Actions _builder;
 
-        public WebElement(IWebDriver webDriver, IWebElement webElement, By by, Actions builder)
+        public WebElement(IWebDriver webDriver, IWebElement webElement, By by)
         {
             _webDriver = webDriver;
             _webElement = webElement;
             _by = by;
-            _builder = builder;
+            _builder = new Actions(_webDriver);
         }
 
         public IWebElement WrappedElement => _webElement;
-        public Actions WrappedBuilder => _builder;
+
+        public Actions Builder => _builder;
+       
 
         public void SetText(string text)
         {
@@ -56,7 +59,7 @@ namespace Core
             var elements = new List<WebElement>();
             foreach (var nativeWebElement in nativeWebElements)
             {
-                WebElement element = new WebElement(_webDriver, nativeWebElement, new ByChained(_by,by),_builder);
+                WebElement element = new WebElement(_webDriver, nativeWebElement, new ByChained(_by,by));
                 elements.Add(element);
             }
 
@@ -79,7 +82,7 @@ namespace Core
        
         public WebElement Click()
         {
-            if (!_webElement.Displayed || !_webElement.Enabled) ScrollTo();
+            ScrollTo();
             WaitToBeClickable(By);
             _webElement?.Click();
             return this;
@@ -113,7 +116,7 @@ namespace Core
         }
 
         public void DragAndDropToOffset(int x, int y) 
-        { 
+        {
             _builder.
                      DragAndDropToOffset(_webElement, x, y)
                      .Release(_webElement)
@@ -140,14 +143,13 @@ namespace Core
         }
 
         public void Perform() {
-            _builder.Perform();
-           
+            _builder.Perform();     
         }
 
         public WebElement FindElement(By by)
         {
             IWebElement nativeElement = _webElement.FindElement(by);
-           WebElement element = new WebElement(_webDriver, nativeElement, new ByChained(_by, by),_builder);
+           WebElement element = new WebElement(_webDriver, nativeElement, new ByChained(_by, by));
            return element;
         }
 
@@ -170,13 +172,12 @@ namespace Core
 
         public void Submit() 
         {
-            this.WrappedElement.Submit();
+            _webElement.Submit();
         }
 
         public void ScrollTo()
         {
-            ((IJavaScriptExecutor)this.WrappedDriver).ExecuteScript("arguments[0].scrollIntoView(true);", this.WrappedElement);
-          
+            ((IJavaScriptExecutor)this.WrappedDriver).ExecuteScript("arguments[0].scrollIntoView({block:'end'});", _webElement);         
         }
     }
 }

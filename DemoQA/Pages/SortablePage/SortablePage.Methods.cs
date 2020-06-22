@@ -7,7 +7,7 @@ namespace DemoQA.Pages.SortablePage
 {
     public partial class SortablePage : SideBarMenu
     {
-        public SortablePage(WebDriver driver, Actions builder) : base(driver, builder) 
+        public SortablePage(WebDriver driver) : base(driver) 
         {
 
         }

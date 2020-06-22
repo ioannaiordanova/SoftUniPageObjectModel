@@ -1,5 +1,7 @@
-﻿using DemoQA.Pages.ResizablePage;
+﻿using Core;
+using DemoQA.Pages.ResizablePage;
 using NUnit.Framework;
+using OpenQA.Selenium.Interactions;
 using System;
 
 namespace DemoQA.Tests
@@ -10,7 +12,7 @@ namespace DemoQA.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            _resizablePage = new ResizablePage(Driver,Builder);
+            _resizablePage = new ResizablePage(Driver);
             _resizablePage.NavigateToPage();
         }
 
@@ -43,14 +45,13 @@ namespace DemoQA.Tests
         [Test]
         [Obsolete]
         public void Resize_MoreThanRestriction_Test()
-        {   
-          
-         _resizablePage.ResizableBoxHandle.MoveToElement()
-                                          .MoveByOffset(300, 400);
+        {
+             WebElement Handle = _resizablePage.ResizableBoxHandle.MoveToElement()
+                                                              .MoveByOffset(300, 400);
 
             Assert.Throws<OpenQA.Selenium.WebDriverException>(delegate {
 
-                Builder.Perform();
+                Handle.Builder.Perform();
             });
 
         }

@@ -12,7 +12,7 @@ namespace DemoQA.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            _sortablePage = new SortablePage(Driver, Builder);
+            _sortablePage = new SortablePage(Driver);
             _sortablePage.NavigateToPage();      
         }
 

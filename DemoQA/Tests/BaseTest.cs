@@ -10,14 +10,12 @@ namespace DemoQA.Tests
     {
         protected WebDriver Driver { get; set; }
 
-        protected Actions Builder { get; set; }
+      
 
         public void Initialize()
         {
-         
             Driver = new WebDriver();
-            Driver.Start(Browser.Chrome);       
-            Builder =  Driver.WrappedBuilder;
+            Driver.Start(Browser.Chrome);            
         }
     }
 }

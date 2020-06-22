@@ -8,12 +8,13 @@ namespace DemoQA.Pages.Droppable
     public partial class DroppablePage: SideBarMenu
     {
 
-        public DroppablePage(WebDriver driver, Actions builder) : base(driver, builder){ }
+        public DroppablePage(WebDriver driver) : base(driver){ }
 
 
 
         public void DragMeAndDropHere() {
-            Builder
+            Actions _builder = new Actions(Driver.WrappedDriver);
+            _builder
                   .DragAndDrop(DragMe.WrappedElement, DropHere.WrappedElement)
                   .Perform();
         }

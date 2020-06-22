@@ -7,7 +7,7 @@ namespace DemoQA.Pages.ResizablePage
 {
     public partial class ResizablePage : SideBarMenu
     {
-        public ResizablePage(WebDriver driver, Actions builder) : base(driver, builder)
+        public ResizablePage(WebDriver driver) : base(driver)
         {
         }
 

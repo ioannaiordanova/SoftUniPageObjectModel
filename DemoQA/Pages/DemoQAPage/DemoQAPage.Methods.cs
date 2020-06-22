@@ -5,10 +5,9 @@ namespace DemoQA.Pages
 {
     public partial class DemoQAPage: BasePage
     {
-        public Actions Builder { get; }
-        public DemoQAPage(WebDriver driver, Actions builder=null) :base(driver) 
+        public DemoQAPage(WebDriver driver) :base(driver) 
         {
-            Builder = builder;
+           
         }    
     }
 }

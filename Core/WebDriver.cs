@@ -18,13 +18,10 @@ namespace Core
     {
         private IWebDriver _webDriver;
         private WebDriverWait _webDriverWait;
-        private Actions _builder;
 
         public IWebDriver WrappedDriver => _webDriver;
 
         public WebDriverWait WrappedWait => _webDriverWait;
-
-        public Actions WrappedBuilder => _builder;
 
         public string Url => _webDriver.Url;
 
@@ -59,7 +56,6 @@ namespace Core
 
             _webDriverWait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(30));
             _webDriver.Manage().Window.Maximize();
-            _builder = new Actions(_webDriver);
         }
 
         public  void Quit()
@@ -76,7 +72,7 @@ namespace Core
         {
             IWebElement nativeWebElement = 
                 _webDriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(locator));
-            WebElement element = new WebElement(_webDriver, nativeWebElement, locator,_builder); 
+            WebElement element = new WebElement(_webDriver, nativeWebElement, locator); 
 
             return element;
         }
@@ -88,7 +84,7 @@ namespace Core
             var elements = new List<WebElement>();
             foreach (var nativeWebElement in nativeWebElements)
             {
-                WebElement element = new WebElement(_webDriver, nativeWebElement, locator,_builder);
+                WebElement element = new WebElement(_webDriver, nativeWebElement, locator);
                 elements.Add(element);
             }
 

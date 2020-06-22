@@ -9,7 +9,7 @@ namespace DemoQA.Tests
         [SetUp]
         public void SetUp() {
             Initialize();
-            _droppablePage = new DroppablePage(Driver, Builder);
+            _droppablePage = new DroppablePage(Driver);
             _droppablePage.NavigateToPage();
 
         }

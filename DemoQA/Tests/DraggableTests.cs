@@ -13,7 +13,7 @@ namespace DemoQA.Tests
         public void Setup()
         {
             Initialize();
-            _draggablePage = new DraggablePage(Driver, Builder);
+            _draggablePage = new DraggablePage(Driver);
             _draggablePage.NavigateToPage();
 
         }
