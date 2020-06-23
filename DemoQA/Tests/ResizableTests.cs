@@ -1,7 +1,7 @@
 ﻿using Core;
+using Core.Utilities.Extentions;
 using DemoQA.Pages.ResizablePage;
 using NUnit.Framework;
-using OpenQA.Selenium.Interactions;
 using System;
 
 namespace DemoQA.Tests
@@ -10,14 +10,17 @@ namespace DemoQA.Tests
     {
         private ResizablePage _resizablePage;
         [SetUp]
-        public void SetUp() {
+        public void SetUp() 
+        {
             Initialize();
             _resizablePage = new ResizablePage(Driver);
             _resizablePage.NavigateToPage();
         }
 
         [TearDown]
-        public void TearDown() {
+        public void TearDown() 
+        {
+            Driver.SaveScreenShot();
             Driver.Quit();
         }
 

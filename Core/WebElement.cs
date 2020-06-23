@@ -177,7 +177,7 @@ namespace Core
 
         public void ScrollTo()
         {
-            ((IJavaScriptExecutor)this.WrappedDriver).ExecuteScript("arguments[0].scrollIntoView({block:'end'});", _webElement);         
+            ((IJavaScriptExecutor)this.WrappedDriver).ExecuteScript("arguments[0].scrollIntoView({block:'center'});", _webElement);         
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DemoQA.Pages.DraggablePage;
+﻿using Core.Utilities.Extentions;
+using DemoQA.Pages.DraggablePage;
 using NUnit.Framework;
 using System;
 
@@ -21,6 +22,7 @@ namespace DemoQA.Tests
         [TearDown]
         public void TearDown()
         {
+            Driver.SaveScreenShot();
             Driver.Quit();
         }
 

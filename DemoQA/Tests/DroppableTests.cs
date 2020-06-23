@@ -1,4 +1,5 @@
-﻿using DemoQA.Pages.Droppable;
+﻿using Core.Utilities.Extentions;
+using DemoQA.Pages.Droppable;
 using NUnit.Framework;
 
 namespace DemoQA.Tests
@@ -15,7 +16,9 @@ namespace DemoQA.Tests
         }
 
         [TearDown]
-        public void TearDown() {
+        public void TearDown() 
+        {
+            Driver.SaveScreenShot();
             Driver.Quit();
         }
 

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Core.Utilities.Extentions;
+using NUnit.Framework;
 using SoftUni.Pages;
 using SoftUni.Pages.QAAutomationPage;
 using System;
@@ -19,6 +20,7 @@ namespace SoftUni.Tests
 
         [TearDown]
         public void TearDown() {
+            Driver.SaveScreenShot();
             Driver.Quit();
         }
 

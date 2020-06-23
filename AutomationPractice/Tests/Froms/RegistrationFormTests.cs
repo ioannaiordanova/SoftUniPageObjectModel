@@ -2,6 +2,7 @@
 using AutomationPractice.Models;
 using AutomationPractice.Pages.RegistrationForm;
 using AutomationPractice.Pages.SignInPage;
+using Core.Utilities.Extentions;
 using NUnit.Framework;
 using System;
 
@@ -28,6 +29,7 @@ namespace AutomationPractice.Tests.Froms
         [TearDown]
         public void TearDown()
         {
+            Driver.SaveScreenShot();
             Driver.Quit();
         }
 

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
+using Core.Utilities.Extentions;
+using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
@@ -94,6 +98,16 @@ namespace Core
         public void Navigate(string url)
         {
             WrappedDriver.Navigate().GoToUrl(url);
+        }
+
+        public void SaveScreenShot() {
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                var path = Path.GetFullPath(@"..\..\..\");
+                var screenshot = ((ITakesScreenshot)_webDriver).GetScreenshot();
+                DriverExtentions.CreateFolderIfNotExists($@"{path}\\Screenshots\\");
+                screenshot.SaveAsFile($@"{path}\\Screenshots\\{TestContext.CurrentContext.Test.FullName}.png", ScreenshotImageFormat.Png);
+            }
         }
     }
 }

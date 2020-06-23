@@ -1,4 +1,5 @@
-﻿using DemoQA.Pages.SortablePage;
+﻿using Core.Utilities.Extentions;
+using DemoQA.Pages.SortablePage;
 using NUnit.Framework;
 using System;
 
@@ -17,7 +18,9 @@ namespace DemoQA.Tests
         }
 
         [TearDown]
-        public void TearDown() {
+        public void TearDown() 
+        {
+            Driver.SaveScreenShot();
             Driver.Quit();
         }
 
