@@ -23,7 +23,7 @@ namespace DemoQA.Pages.Droppable
 
         public override void ClickOnSideBarMenuItem()
         {
-            base.ClickOnSideBarMenuItem(SideBarEnum.Droppable.GetStringValue());
+            base.ClickOnSideBarMenuItem(SideBarEnum.Droppable);
 
         }
     }

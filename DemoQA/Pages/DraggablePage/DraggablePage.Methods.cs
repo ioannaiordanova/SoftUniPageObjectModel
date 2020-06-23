@@ -14,7 +14,7 @@ namespace DemoQA.Pages.DraggablePage
        
         public override void ClickOnSideBarMenuItem()
         {
-            base.ClickOnSideBarMenuItem(SideBarEnum.Draggable.GetStringValue());
+            base.ClickOnSideBarMenuItem(SideBarEnum.Draggable);
 
         }
 

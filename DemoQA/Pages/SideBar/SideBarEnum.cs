@@ -1,19 +1,16 @@
-﻿
-
-
-namespace DemoQA.Pages.SideBar
+﻿namespace DemoQA.Pages.SideBar
 {
-    public enum SideBarEnum
+    public class SideBarEnum
     {
-        [IdValue("item-0")]
-        Sortable = 1,
-        [IdValue("item-1")]
-        Selectable,
-        [IdValue("item-2")]
-        Resizable,
-        [IdValue("item-3")]
-        Droppable,
-        [IdValue("item-4")]
-        Draggable
+        
+        public const string Sortable = "item-0";
+    
+        public const string Selectable = "item-1";
+        
+        public const string Resizable = "item-2";
+        
+        public const string Droppable = "item-3";
+       
+        public const string Draggable = "item-4";
     }
 }

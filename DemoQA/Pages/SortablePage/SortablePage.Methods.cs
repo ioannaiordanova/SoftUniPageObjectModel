@@ -46,7 +46,7 @@ namespace DemoQA.Pages.SortablePage
 
         public override void ClickOnSideBarMenuItem()
         {
-            base.ClickOnSideBarMenuItem(SideBarEnum.Sortable.GetStringValue());
+            base.ClickOnSideBarMenuItem(SideBarEnum.Sortable);
 
         }
     }

@@ -14,7 +14,7 @@ namespace DemoQA.Pages.ResizablePage
 
         public override void ClickOnSideBarMenuItem()
         {
-            base.ClickOnSideBarMenuItem(SideBarEnum.Resizable.GetStringValue());
+            base.ClickOnSideBarMenuItem(SideBarEnum.Resizable);
 
         }
     }

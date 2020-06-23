@@ -28,7 +28,7 @@ namespace DemoQA.Pages.Selectable
 
         public override void ClickOnSideBarMenuItem()
         {
-            base.ClickOnSideBarMenuItem(SideBarEnum.Selectable.GetStringValue());
+            base.ClickOnSideBarMenuItem(SideBarEnum.Selectable);
 
         }
     }
